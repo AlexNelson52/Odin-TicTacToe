@@ -95,3 +95,43 @@ p{
   color:  rgb(76, 233, 14);
   user-select: none;
 }
+
+.close-modal {
+  position: absolute;
+  top: 30rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+  border: 1px solid white;
+  background: rgb(76, 233, 14);
+  font-family: orbitron;
+  width: 10rem;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30rem;
+  background-color: rgb(0, 0, 0);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgb(76, 233, 14);
+  z-index: 10;
+  height: 50%;
+  color: rgb(76, 233, 14);
+  gap: 15%;
+}
+
+input{
+  background-color: black;
+  padding: .5rem;
+  color: rgb(76, 233, 14);
+  font-family: orbitron;
+  font-size: 1rem;
+}
+

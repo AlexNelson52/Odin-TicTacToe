@@ -13,9 +13,21 @@
   <h1 class="headerText">Tic Tac Toe</h1>
   <div class="buttonDiv">
   <button class="newGameBtn">New Game</button>
+
 </div>
+
   <div class="MainContainer">
     <div class="GameContainer">
+      <div class="modal hidden">
+
+        <form id="form-a">
+          <span for="player1Name">Enter Player 1 Name:</span><br>
+          <input type="text" id="player1Name"><br>
+          <span for="player2Name">Enter Player 2 Name:</span><br>
+          <input type="text" id="player2Name">
+          <button class="close-modal" form="form-a" type="submit">Submit</button>
+        </form>
+      </div>
       <div class="TicTacToeGame">
         <div class="rows row1" id="0"></div>
         <div class="rows row2" id="1"></div>

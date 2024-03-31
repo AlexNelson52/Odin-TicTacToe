@@ -1,7 +1,11 @@
 const row = document.querySelectorAll('.rows')
 const h1Text = document.querySelector('.headerText')
 const newGameBtn = document.querySelector('.newGameBtn')
-
+const inputNameBtn = document.querySelector('.close-modal')
+const modalContainer = document.querySelector('.modal')
+const player1NameInput = document.querySelector('#player1Name')
+const player2NameInput = document.querySelector('#player2Name')
+const formInput = document.querySelector('#form-a')
 const gameBoard = (() => {
   const board = ['', '', '', '', '', '', '', '', ''];
   return {board}
@@ -11,8 +15,8 @@ const player = (name, marker) => {
   return {name,marker}
 }
 
-const player1 = player('Player 1', 'X');
-const player2 = player('Player 2', 'O');
+let player1;
+let player2;
 
 const playGame = (() =>{
   const {board} = gameBoard;
@@ -25,7 +29,7 @@ const playGame = (() =>{
       return} else {
     if(board[e.getAttribute('id')] !== 'X' && board[e.getAttribute('id')] !== 'O' ){
     if(marker === ''){
-      h1Text.textContent = "Player 2's Turn"
+      h1Text.textContent = `${player2.name}'s Turn`
       marker = player1.marker
       e.textContent = player1.marker
       board.splice(e.getAttribute('id'),1,marker);
@@ -137,3 +141,38 @@ row
 
   return{playerTurn, gameWinnerCondition}
 })();
+
+inputNameBtn.addEventListener('submit', (e) => {
+  modalContainer.style.display = 'none'
+  e.preventDefault();
+})
+
+formInput.addEventListener('submit', (e) => {
+  e.preventDefault();
+  modalContainer.style.display = 'none'
+  if(player1NameInput.value != ''){
+    player1 = player(player1NameInput.value, 'X');
+  } 
+  if(player2NameInput.value != ''){
+    player2 = player(player2NameInput.value, 'O');
+  } else {
+    player2 = player('Player 2', 'O');
+    player1 = player('Player 1', 'X')
+  }
+})
+
+formInput.addEventListener('keypress', (e) => {
+  if (e.key === 'enter'){
+  e.preventDefault();
+  modalContainer.style.display = 'none'
+  if(player1NameInput.value != ''){
+    player1 = player(player1NameInput.value, 'X');
+  } 
+  if(player2NameInput.value != ''){
+    player2 = player(player2NameInput.value, 'O');
+  } else {
+    player2 = player('Player 2', 'O');
+    player1 = player('Player 1', 'X')
+  }
+}
+})
