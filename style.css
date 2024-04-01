@@ -98,7 +98,7 @@ p{
 
 .close-modal {
   position: absolute;
-  top: 30rem;
+  top: 40rem;
   right: 2rem;
   font-size: 2rem;
   color: black;
@@ -113,7 +113,7 @@ p{
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 50%;
+  top: 32rem;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30rem;
@@ -122,7 +122,7 @@ p{
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgb(76, 233, 14);
   z-index: 10;
-  height: 50%;
+  height: 34rem;
   color: rgb(76, 233, 14);
   gap: 15%;
 }

@@ -6,6 +6,7 @@ const modalContainer = document.querySelector('.modal')
 const player1NameInput = document.querySelector('#player1Name')
 const player2NameInput = document.querySelector('#player2Name')
 const formInput = document.querySelector('#form-a')
+const mainContainer = document.querySelector('.body')
 const gameBoard = (() => {
   const board = ['', '', '', '', '', '', '', '', ''];
   return {board}
